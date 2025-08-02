@@ -9,13 +9,28 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The class {@code EasySQL} provides an easy way to use SQLite in Android.
+ * @author Isaiah Noel Salazar
+ */
 public class EasySQL {
     Context context;
 
+    /**
+     * Initializes the {@code EasySQL} class with a given {@code Context}.
+     * @param context a {@code Context} object.
+     */
     public EasySQL(Context context){
         this.context = context;
     }
 
+    /**
+     * Creates a {@code SQLiteDatabase} object if the {@code databaseName} does not exist
+     * and opens it if it does.
+     * @param databaseName a {@code String} object.
+     * @return a {@code SQLiteDatabase} object.
+     * @throws Exception if something went wrong.
+     */
     SQLiteDatabase database(String databaseName){
         try {
             SQLiteOpenHelper sqLiteOpenHelper = new SQLiteOpenHelper(context, databaseName, null, 1) {
@@ -33,6 +48,14 @@ public class EasySQL {
         return null;
     }
 
+    /**
+     * Creates a table inside the given {@code databaseName} with a name of {@code tableName}
+     * and the columns of {@code columns}.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @param columns a {@code String[]} object.
+     * @throws Exception if something went wrong.
+     */
     public void createTable(String databaseName, String tableName, String[] columns){
         try {
             SQLiteDatabase db = database(databaseName);
@@ -54,6 +77,14 @@ public class EasySQL {
         }
     }
 
+    /**
+     * Checks if a table inside the given {@code databaseName} with a name of {@code tableName}
+     * exists.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @return a {@code boolean} value.
+     * @throws Exception if something went wrong.
+     */
     public boolean doesTableExist(String databaseName, String tableName){
         try {
             SQLiteDatabase db = database(databaseName);
@@ -67,6 +98,12 @@ public class EasySQL {
         return false;
     }
 
+    /**
+     * Deletes a table inside the given {@code databaseName} with a name of {@code tableName}.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @throws Exception if something went wrong.
+     */
     public void deleteTable(String databaseName, String tableName){
         try {
             SQLiteDatabase db = database(databaseName);
@@ -79,6 +116,13 @@ public class EasySQL {
         }
     }
 
+    /**
+     * Clears all columns of a table inside the given {@code databaseName} with a name of
+     * {@code tableName}.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @throws Exception if something went wrong.
+     */
     public void clearTable(String databaseName, String tableName){
         try {
             SQLiteDatabase db = database(databaseName);
@@ -91,6 +135,14 @@ public class EasySQL {
         }
     }
 
+    /**
+     * Inserts the given {@code values} into a table inside the given {@code databaseName} with a
+     * name of {@code tableName}.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @param values a {@code String[]} object.
+     * @throws Exception if something went wrong.
+     */
     public void insertToTable(String databaseName, String tableName, String[] values){
         try {
             SQLiteDatabase db = database(databaseName);
@@ -107,6 +159,15 @@ public class EasySQL {
         }
     }
 
+    /**
+     * Deletes a given {@code columnValuePair} from a table inside the given {@code databaseName}
+     * with a name of {@code tableName}. Creating a {@code columnValuePair} is a pre-requisite
+     * before running this command, else it will not work properly.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @param columnValuePair a {@code String} object.
+     * @throws Exception if something went wrong.
+     */
     public void deleteFromTable(String databaseName, String tableName, String columnValuePair){
         try {
             SQLiteDatabase db = database(databaseName);
@@ -127,6 +188,14 @@ public class EasySQL {
         }
     }
 
+    /**
+     * Returns all values of a given table inside the given {@code databaseName} with a name of
+     * {@code tableName}.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @return a {@code List<String>} object containing all the values of each column in the table.
+     * @throws Exception if something went wrong.
+     */
     public List<String> getTableValues(String databaseName, String tableName){
         List<String> temp = new ArrayList<>();
         try {
@@ -152,6 +221,14 @@ public class EasySQL {
         return temp;
     }
 
+    /**
+     * Returns all values of a given table inside the given {@code databaseName} with a name of
+     * {@code tableName}.
+     * @param databaseName a {@code String} object.
+     * @param tableName a {@code String} object.
+     * @return a {@code List<String[]>} object containing all the rows of the table.
+     * @throws Exception if something went wrong.
+     */
     public List<String[]> getTableValuesAsArray(String databaseName, String tableName){
         List<String[]> temp = new ArrayList<>();
         try {
