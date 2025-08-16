@@ -191,3 +191,50 @@ Fullscreen.enable(this);
 Fullscreen.disable(this);
 ```
 ## RoundedAlertDialog
+### Initialization
+```java
+RoundedAlertDialog roundedAlertDialog = new RoundedAlertDialog(this);
+```
+### setTitle
+- set a title for the dialog
+```java
+roundedAlertDialog.setTitle("Sample title");
+```
+### setupLeftButton
+- setup the left button for the dialog with a specified text and color
+```java
+roundedAlertDialog.setupLeftButton("Left button");
+
+// Or
+
+roundedAlertDialog.setupLeftButton("Left button", Color.RED);
+```
+### setupRightButton
+- setup the right button for the dialog with a specified text and color
+```java
+roundedAlertDialog.setupRightButton("Right button");
+
+// Or
+
+roundedAlertDialog.setupRightButton("Right button", Color.RED);
+```
+### setupLeftButtonOnClick
+- setup the OnClick function for the dialog's left button
+```java
+roundedAlertDialog.setupLeftButtonOnClick(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        // do something
+    }
+});
+```
+### setupRightButtonOnClick
+- setup the OnClick function for the dialog's right button
+```java
+roundedAlertDialog.setupRightButtonOnClick(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        // do something
+    }
+});
+```
