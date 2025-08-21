@@ -35,7 +35,7 @@ public class Check {
          * Adds a {@code String} object for valid domain extensions.
          * @param str a {@code String} object.
          */
-        public static void addValidDomainExtensions(String str){
+        public static void addValidDomainExtension(String str){
             validDomainExtensions.add(str);
         }
 

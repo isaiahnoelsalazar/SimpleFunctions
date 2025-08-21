@@ -79,6 +79,42 @@ Date now = new Date("2025/01/01");
 Date until = new Date("2025/01/02");
 Check.howManyDaysLeft(now, until); // returns 1.0
 ```
+### Email.addValidDomainName
+- adds a valid domain name to the list of valid domain names
+```java
+Check.Email.addValidDomainName("gmail");
+```
+### Email.addValidDomainExtension
+- adds a valid domain extension to the list of valid domain extensions
+```java
+Check.Email.addValidDomainExtension("com");
+```
+### Email.addValidDomain
+- adds a valid domain to the list of valid domains
+```java
+Check.Email.addValidDomain("gmail.com");
+```
+### Email.shouldUseFullDomain
+- sets the checker to use full domains or not
+```java
+Check.Email.shouldUseFullDomain();
+
+// Or
+
+Check.Email.shouldUseFullDomain(true);
+
+// Or
+
+Check.Email.shouldUseFullDomain(false);
+```
+### Email.isValid
+- checks a String if it is a valid email or not
+- will return false if the email domain is not listed in the valid domains
+```java
+Check.Email.isValid("test@gmail.com"); // returns true
+Check.Email.isValid("test@outlook.com"); // returns false
+Check.Email.isValid("test@asd.com"); // returns false
+```
 ## Convert
 ### toRealName
 - will capitalize the first character of a given String
