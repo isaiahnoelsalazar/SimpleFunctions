@@ -3,9 +3,10 @@
 ```java
 dependencies {
     // other existing code
-    implementation 'com.github.isaiahnoelsalazar:SimpleFunctions:1.0'
+    implementation 'com.github.isaiahnoelsalazar:SimpleFunctions:[latest release version]'
 }
 ```
+> Note: Remove the brackets for version
 ### In settings.gradle
 ```java
 dependencyResolutionManagement {
