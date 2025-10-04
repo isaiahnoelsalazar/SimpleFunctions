@@ -25,6 +25,7 @@ dependencyResolutionManagement {
 - [FlippableImageView](#flippableimageview)
 - [Fullscreen](#fullscreen)
 - [RoundedAlertDialog](#roundedalertdialog)
+- [SimpleList](#simplelist)
 
 ## Check
 ### hasNumbers
@@ -216,6 +217,58 @@ easySQL.deleteFromTable("sampleDB", "sampleTABLE", "name:Sample");
 easySQL.deleteTable("sampleDB", "sampleTABLE");
 ```
 ## FlippableImageView
+### Initialization
+```xml
+<com.github.saiaaaaaaa.mywebsite_androiddependency.FlippableImageView
+     android:id="@+id/sample_flippable_image_view"
+     android:layout_width="100dp"
+     android:layout_height="100dp" />
+```
+or
+```xml
+<com.github.saiaaaaaaa.mywebsite_androiddependency.FlippableImageView
+     android:id="@+id/sample_flippable_image_view"
+     android:layout_width="100dp"
+     android:layout_height="100dp"
+     android:src="@drawable/sample_image" />
+```
+or
+```xml
+<com.github.saiaaaaaaa.mywebsite_androiddependency.FlippableImageView
+     android:id="@+id/sample_flippable_image_view"
+     android:layout_width="100dp"
+     android:layout_height="100dp"
+     android:scaleType="centerCrop"
+     android:src="@drawable/sample_image" />
+```
+```java
+FlippableImageView flippableImageView = findViewById(R.id.sample_flippable_image_view);
+```
+### setFrontImage
+- set the front image of the flippable image view
+```java
+flippableImageView.setFrontImage(R.drawable.piece);
+```
+### setBackImage
+- set the back image of the flippable image view
+```java
+flippableImageView.setBackImage(R.drawable.piece);
+```
+### setReverseBackImage
+- reverses back image of the flippable image view
+```java
+flippableImageView.setReverseBackImage(true);
+```
+### flip
+- flips the flippable image view
+```java
+flippableImageView.flip();
+```
+### instantFlip
+- instantly flips the flippable image view
+```java
+flippableImageView.instantFlip();
+```
 ## Fullscreen
 ### enable
 - will enable fullscreen viewing on an activity
@@ -274,4 +327,55 @@ roundedAlertDialog.setupRightButtonOnClick(new View.OnClickListener() {
         // do something
     }
 });
+```
+## SimpleList
+### Initialization
+```xml
+<com.salazarisaiahnoel.designtester.SimpleList
+    android:id="@+id/simple_list_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+```
+```java
+SimpleList simpleList = findViewById(R.id.simple_list_id);
+```
+### addItem
+- add a String to the list
+```java
+simpleList.addItem("Sample text 1");
+```
+### removeItem
+- remove a String from the list using its position
+```java
+simpleList.removeItem(0);
+```
+### setOnItemClickListener
+- set the OnItemClickListener for the list
+```java
+simpleList.setOnItemClickListener(new SimpleList.OnItemClickListener() {
+    @Override
+    public void onItemClick(int position) {
+        // do something
+    }
+});
+```
+### setOnItemLongClickListener
+- set the OnItemLongClickListener for the list
+```java
+simpleList.setOnItemLongClickListener(new SimpleList.OnItemLongClickListener() {
+    @Override
+    public void onItemLongClick(int position) {
+        // do something
+    }
+});
+```
+### setPadding
+- set the padding for each item in the list
+```java
+simpleList.setPadding(16);
+```
+### setPadding
+- set individual padding for each item in the list
+```java
+simpleList.setPadding(24, 16, 8, 12); // left, top, right, bottom
 ```
