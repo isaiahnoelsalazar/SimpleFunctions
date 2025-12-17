@@ -219,14 +219,14 @@ easySQL.deleteTable("sampleDB", "sampleTABLE");
 ## FlippableImageView
 ### Initialization
 ```xml
-<com.github.isaiahnoelsalazar.SimpleFunctions.FlippableImageView
+<com.github.isaiahnoelsalazar.simplefunctions.FlippableImageView
      android:id="@+id/sample_flippable_image_view"
      android:layout_width="100dp"
      android:layout_height="100dp" />
 ```
 or
 ```xml
-<com.github.isaiahnoelsalazar.SimpleFunctions.FlippableImageView
+<com.github.isaiahnoelsalazar.simplefunctions.FlippableImageView
      android:id="@+id/sample_flippable_image_view"
      android:layout_width="100dp"
      android:layout_height="100dp"
@@ -234,7 +234,7 @@ or
 ```
 or
 ```xml
-<com.github.isaiahnoelsalazar.SimpleFunctions.FlippableImageView
+<com.github.isaiahnoelsalazar.simplefunctions.FlippableImageView
      android:id="@+id/sample_flippable_image_view"
      android:layout_width="100dp"
      android:layout_height="100dp"
@@ -331,7 +331,7 @@ roundedAlertDialog.setupRightButtonOnClick(new View.OnClickListener() {
 ## SimpleList
 ### Initialization
 ```xml
-<com.github.isaiahnoelsalazar.SimpleFunctions.SimpleList
+<com.github.isaiahnoelsalazar.simplefunctions.SimpleList
     android:id="@+id/simple_list_id"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />

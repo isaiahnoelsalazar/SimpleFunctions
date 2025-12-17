@@ -63,6 +63,11 @@ public class SimpleList extends RecyclerView {
         refresh();
     }
 
+    public void clear(){
+        data.clear();
+        refresh();
+    }
+
     public List<String> getData(){
         return data;
     }
