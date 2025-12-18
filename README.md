@@ -19,6 +19,7 @@ dependencyResolutionManagement {
 ```
 
 # Available methods
+- [Actions](#actions)
 - [Check](#check)
 - [Convert](#convert)
 - [EasySQL](#easysql)
@@ -26,7 +27,49 @@ dependencyResolutionManagement {
 - [Fullscreen](#fullscreen)
 - [RoundedAlertDialog](#roundedalertdialog)
 - [SimpleList](#simplelist)
+- [URLRequest](#urlrequest)
 
+## Actions
+### Initialization
+```java
+Actions action = new Actions();
+```
+### build
+- sets a runnable for the action
+```java
+action.build(new Runnable() {
+    @Override
+    public void run() {
+        // do something
+    }
+});
+```
+### setArg
+- sets an argument for the action
+- will accept any type of argument
+- returns the action itself
+```java
+action.setArg("Sample");
+
+// Or
+
+action.setArg(10);
+```
+### getArg
+- returns the argument of the action
+```java
+action.getArg();
+```
+### execute
+- runs the action
+```java
+action.execute();
+```
+### executeDelayed
+- runs the action after a specified delay in milliseconds
+```java
+action.executeDelayed(1000);
+```
 ## Check
 ### hasNumbers
 - will check a String for a number
@@ -378,4 +421,42 @@ simpleList.setPadding(16);
 - set individual padding for each item in the list
 ```java
 simpleList.setPadding(24, 16, 8, 12); // left, top, right, bottom
+```
+## URLRequest
+### Initialization
+```java
+URLRequest request = new URLRequest();
+```
+### build
+- sets a runnable for the request
+```java
+request.build(new Runnable() {
+    @Override
+    public void run() {
+        // do something
+    }
+});
+```
+### getDefaultActionArg
+- returns the default argument of the action
+```java
+request.getDefaultActionArg();
+```
+### execute
+- runs the request
+- will accept a URL string and a method string
+```java
+request.execute("https://www.example.com", "GET");
+```
+### Example
+```java
+URLRequest request = new URLRequest();
+request.build(new Runnable() {
+    @Override
+    public void run() {
+        System.out.println(request.getDefaultActionArg()); // returns the result of the request
+        // do something else
+    }
+});
+request.execute("https://www.example.com", "GET"); // replace the URL and method to your liking
 ```
