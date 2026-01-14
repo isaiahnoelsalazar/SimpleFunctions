@@ -27,6 +27,7 @@ dependencyResolutionManagement {
 - [Fullscreen](#fullscreen)
 - [RoundedAlertDialog](#roundedalertdialog)
 - [SimpleList](#simplelist)
+- [Sort](#sort)
 - [URLRequest](#urlrequest)
 
 ## Actions
@@ -421,6 +422,11 @@ simpleList.setPadding(16);
 - set individual padding for each item in the list
 ```java
 simpleList.setPadding(24, 16, 8, 12); // left, top, right, bottom
+```
+## Sort
+### bubbleSort
+```java
+Sort.bubbleSort(new int[]{ 10, 8, 52, 27, 63, 95, 6, 46 });
 ```
 ## URLRequest
 ### Initialization
