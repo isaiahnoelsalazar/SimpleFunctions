@@ -21,10 +21,12 @@ dependencyResolutionManagement {
 # Available methods
 - [Actions](#actions)
 - [Check](#check)
+- [Cipher](#cipher)
 - [Convert](#convert)
 - [EasySQL](#easysql)
 - [FlippableImageView](#flippableimageview)
 - [Fullscreen](#fullscreen)
+- [Memory](#memory)
 - [RoundedAlertDialog](#roundedalertdialog)
 - [SimpleList](#simplelist)
 - [Sort](#sort)
@@ -160,6 +162,11 @@ Check.Email.shouldUseFullDomain(false);
 Check.Email.isValid("test@gmail.com"); // returns true
 Check.Email.isValid("test@outlook.com"); // returns false
 Check.Email.isValid("test@asd.com"); // returns false
+```
+## Cipher
+### TranspositionCipher
+```java
+Cipher.TranspositionCipher("Sample text");
 ```
 ## Convert
 ### toRealName
@@ -323,6 +330,59 @@ Fullscreen.enable(this);
 - will disable fullscreen viewing on an activity
 ```java
 Fullscreen.disable(this);
+```
+## Memory
+### Initialization
+```csharp
+Memory<AnyClassType> memory = new Memory<AnyClassType>();
+
+// Or
+
+Memory<string> memory = new Memory<string>(); // something general like this
+```
+### Add
+- adds an item to memory
+```csharp
+AnyClassType item = new AnyClassType();
+memory.Add(item);
+
+// Or
+
+memory.Add("Sample text");
+```
+### Contains
+- checks if memory contains an item
+```csharp
+bool contains = memory.Contains(new AnyClassType());
+```
+### Remove
+- removes an item from memory
+```csharp
+memory.Remove(item); // assuming 'item' already exists in memory
+```
+### RemoveAt
+- removes an item from memory at a specific index
+```csharp
+memory.RemoveAt(1);
+```
+### Get
+- returns an item from memory at a specific index
+```csharp
+AnyClassType item = memory.Get(0);
+
+// Or
+
+string text = memory.Get(0);
+```
+### Count
+- returns the number of items in memory
+```csharp
+int count = memory.Count();
+```
+### Clear
+- clears all items in memory
+```csharp
+memory.Clear();
 ```
 ## RoundedAlertDialog
 ### Initialization
